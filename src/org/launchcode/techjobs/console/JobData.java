@@ -87,19 +87,22 @@ public class JobData {
 
         // load data, if not already loaded
         loadData();
+        Integer stop = 0;
 
         ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
 
         for (HashMap<String, String> row : allJobs) {
 
-            //String aValue = row.get(column);
-            for (String jobba : row.keySet()){
-                String jobdata = row.get(jobba);
-                if (jobdata.contains(value)) {
-                jobs.add(row);
+                //String aValue = row.get(column);
+                for (String jobba : row.keySet()) {
+                    String jobdata = row.get(jobba);
+                    if (jobdata.contains(value)) {
+                        jobs.add(row);
+                        break;
+                    }
                 }
             }
-        }
+
         return jobs;
     };
     /**
