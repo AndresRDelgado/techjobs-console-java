@@ -115,6 +115,9 @@ public class TechJobs {
         //System.out.println("printJobs is not implemented yet");
 
         // Print list of skills, employers, etc
+        if (someJobs.isEmpty()){
+            System.out.println("Your search returned no results.");
+        }
         for (HashMap<String, String> job : someJobs) {
             System.out.println("*****");
             for (String jobba : job.keySet()){
